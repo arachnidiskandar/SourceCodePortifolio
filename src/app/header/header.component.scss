@@ -1,0 +1,18 @@
+nav {
+    p {
+        font-weight: bold;
+        font-size: 20px;
+    }
+    padding: 3vh;
+    background-color: white;
+    i {
+        font-size: 30px;
+    }
+    p, i {
+        margin: 2px 15px;
+    }
+    p:hover, i:hover {
+        color: #c0c0c0;
+        cursor: pointer;
+    }
+}
