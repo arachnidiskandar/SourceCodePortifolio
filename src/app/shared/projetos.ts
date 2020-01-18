@@ -1,52 +1,68 @@
-import { Tecnologias } from './tecnologias';
 
 export interface Projeto {
     nome: string;
     descricao: string;
-    tecnologias: Tecnologias[];
+    detalhes: string[];
+    online?: boolean;
+    github?: string;
 }
 
 export const MEUS_PROJETOS: Projeto[] = [
     {
-        nome: 'ProdutoresConsumidores',
-        descricao: 'n sei',
-        tecnologias: [{
-            python: true
-        }]
+        nome: 'Produtores Consumidores',
+        descricao: 'Trabalho de sistemas operacionais feito em python para resolver o problema "Produtores e Consumidores"',
+        detalhes: [
+            'Gerenciamento de múltiplas threads do processador',
+            'Programação orientada a objetos',
+            'Gerenciamento de concorrência de variáveis'
+        ],
+        online: true,
+        github: 'https://www.github.com/arachnidiskandar/ProdutoresConsumidores'
     },
     {
-        nome: 'ProdutoresConsumidores',
-        descricao: 'n sei',
-        tecnologias: [{
-            python: true
-        }]
+        nome: 'Produtores Consumidores',
+        descricao: 'Trabalho de sistemas operacionais feito em python para resolver o problema "Produtores e Consumidores"',
+        detalhes: [
+            'Gerenciamento de múltiplas threads do processador',
+            'Programação orientada a objetos',
+            'Gerenciamento de concorrência de variáveis'
+        ]
     },
     {
-        nome: 'ProdutoresConsumidores',
-        descricao: 'n sei',
-        tecnologias: [{
-            python: true
-        }]
+        nome: 'Produtores Consumidores',
+        descricao: 'Trabalho de sistemas operacionais feito em python para resolver o problema "Produtores e Consumidores"',
+        detalhes: [
+            'Gerenciamento de múltiplas threads do processador',
+            'Programação orientada a objetos',
+            'Gerenciamento de concorrência de variáveis'
+        ]
     },
     {
-        nome: 'ProdutoresConsumidores',
-        descricao: 'n sei',
-        tecnologias: [{
-            python: true
-        }]
+        nome: 'Produtores Consumidores',
+        descricao: 'Trabalho de sistemas operacionais feito em python para resolver o problema "Produtores e Consumidores"',
+        detalhes: [
+            'Gerenciamento de múltiplas threads do processador',
+            'Programação orientada a objetos',
+            'Gerenciamento de concorrência de variáveis'
+        ]
     },
     {
-        nome: 'ProdutoresConsumidores',
-        descricao: 'n sei',
-        tecnologias: [{
-            python: true
-        }]
+        nome: 'Produtores Consumidores',
+        descricao: 'Trabalho de sistemas operacionais feito em python para resolver o problema "Produtores e Consumidores"',
+        detalhes: [
+            'Gerenciamento de múltiplas threads do processador',
+            'Programação orientada a objetos',
+            'Gerenciamento de concorrência de variáveis'
+        ]
     },
     {
-        nome: 'ProdutoresConsumidores',
-        descricao: 'n sei',
-        tecnologias: [{
-            python: true
-        }]
+        nome: 'Produtores Consumidores',
+        descricao: 'Trabalho de sistemas operacionais feito em python para resolver o problema "Produtores e Consumidores"',
+        detalhes: [
+            'Gerenciamento de múltiplas threads do processador',
+            'Programação orientada a objetos',
+            'Gerenciamento de concorrência de variáveis'
+        ]
+        
     }
 ];

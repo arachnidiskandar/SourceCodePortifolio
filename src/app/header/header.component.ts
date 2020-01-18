@@ -11,7 +11,5 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
   }
-  abrirLink(url: string) {
-    window.open(url, '_blank');
-  }
+  
 }

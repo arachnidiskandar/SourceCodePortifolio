@@ -1,11 +1,3 @@
-div{
-    flex-direction: row;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    .projetos {
-        background-color: black;
-        max-width: 380px;
-        margin: 10px;
-    }
+.d-flex {
+    min-width: 320px;
 }

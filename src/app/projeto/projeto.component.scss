@@ -1,4 +1,53 @@
-div {
-    background-color: black;
-    height: 40vh;
+@import '../styles/colors.scss';
+
+.projeto {
+  margin: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  position: relative;
+  max-width: 350px;
+  
+  img {
+    max-height: 320px;
+  }
+  .info-projetos {
+    background-color: white;
+    color: $primary;
+    
+    .titulo-projeto {
+      h5 {
+        margin: 0;
+      }
+      i {
+        font-size: 18px;
+        color: $primary;
+        margin-top: 5px;
+      }
+    }
+  }
+  .detalhes {
+    width: auto;
+    height: 100%;
+    top: 100%;
+    position: absolute;
+    background-color: white;
+    .titulo-detalhe {
+        color: $primary;
+    }
+    .info {
+        height: 300px;
+    }
+    .botoes {
+        font-size: 2rem;
+        border-top: solid 1px #d4d4d4;
+        button {
+            a{
+                text-decoration: none;
+                color: white;
+            }
+            
+        }
+    }
+  }
 }

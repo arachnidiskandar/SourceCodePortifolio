@@ -1,3 +1,26 @@
-<div>
-    <h5>{{this.projeto.nome}}</h5>
+<div class="projeto">
+    <img (click)="mudarEstado()" class="pointer" src="https://via.placeholder.com/600">
+    <div class="pt-1 info-projetos d-flex flex-column">
+        <div class="titulo-projeto mb-2 d-flex justify-content-around">
+            <h5>{{ projeto.nome }}</h5>
+            <i (click)="mudarEstado()" class="fa fa-ellipsis-v pointer"></i>
+        </div>
+        <p class="m-3">{{ projeto.descricao }}</p>
+    </div>
+    <div [@mostrarDetalhesProjeto]="estado" class="detalhes">
+        <div class="titulo-detalhe d-flex justify-content-between m-3">
+            <h5>Detalhes do Projeto</h5><img class="pointer" (click)="mudarEstado()" src="../../assets/icons/close.svg" alt="">
+        </div>
+        <div class="info">
+            <ul>
+                <li *ngFor="let detalhe of projeto.detalhes">{{ detalhe }}</li>
+            </ul>
+        </div>
+        <div class="botoes d-flex justify-content-center">
+            <div class="d-flex m-3">
+                <button *ngIf="projeto.online" class="btn btn-primary mr-3"><a *ngIf="projeto.online" href="{{ projeto.site }}" target="_blank">Ver Online</a></button>
+                <button class="btn btn-primary"><a href="{{ projeto.github }}" target="_blank">Código Fonte</a></button>
+            </div>
+        </div>
+    </div>
 </div>

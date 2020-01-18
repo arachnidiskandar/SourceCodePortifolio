@@ -1,7 +1,7 @@
-<div>
-    <div class="projetos" *ngFor="let projeto of projetos">
-        <h4>{{ projeto.nome }}</h4>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam repudiandae dolores obcaecati facere neque temporibus eaque provident distinctio suscipit quisquam praesentium excepturi recusandae eum ipsam quasi, in veritatis. Temporibus, tenetur? Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel iste doloribus, illum a libero, id, ex veritatis minima maxime laboriosam itaque qui nobis nesciunt doloremque voluptatum provident. Omnis, libero odit! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam voluptate, laudantium perferendis officiis obcaecati, esse, eveniet accusantium corporis unde odit voluptatem. Eos inventore odio nisi libero doloremque temporibus cupiditate et.</p>
-        
+<div class="d-flex flex-wrap flex-row justify-content-around">
+    <div *ngFor="let projeto of projetos">
+        <app-projeto [projeto]="projeto"></app-projeto>
     </div>
 </div>
+
+

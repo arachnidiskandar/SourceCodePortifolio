@@ -1,18 +1,25 @@
+@import '../styles/colors.scss';
+
 nav {
     flex:0 1 100%;
+    color: $primary;
     p {
         font-weight: bold;
         font-size: 20px;
     }
-    padding: 3vh;
+    padding: 1vh;
     background-color: white;
-    i {
-        font-size: 30px;
+    a {
+        color: $primary;
+        i {
+            font-size: 30px;
+        }
     }
+    
     p, i {
         margin: 2px 15px;
     }
-    p:hover, i:hover {
+    p:hover, a:hover {
         color: #c0c0c0;
         cursor: pointer;
     }
