@@ -1,11 +1,22 @@
 <nav [@mudarNavBar]="estado" class="d-flex fixed-top navbar">
-    <p>Projetos</p>
-    <p>Sobre</p>
-    <p>Contato</p>
-    <a href="https://github.com/arachnidiskandar">
-        <i [ngStyle]="{'color': estado === 'inicial' ? 'white' : '#4168a3' }" class="fa fa-github"></i>
-    </a>
-    <a class="mr-2" href="https://www.linkedin.com/in/augusto-rafael-santos-da-silva-b957b5162/">
-        <i [ngStyle]="{'color': estado === 'inicial' ? 'white' : '#4168a3' }" class="fa fa-linkedin"></i>
-    </a>
+    <div>
+        <h5>Augusto Rafael</h5>
+        <span>Desenvolvedor Front-End</span>
+    </div>
+    <div id="opcoes" [class.responsivo]="menu">
+        <p>Projetos</p>
+        <p>Sobre</p>
+        <p>Contato</p>
+        <a [ngStyle]="mudarEstilo()" href="https://github.com/arachnidiskandar">
+            <i class="fa fa-github"></i>
+        </a>
+        <a [ngStyle]="mudarEstilo()" href="https://www.linkedin.com/in/augusto-rafael-santos-da-silva-b957b5162/">
+            <i class="fa fa-linkedin"></i>
+        </a>
+    </div>
+    <input type="checkbox" id="check">
+    <label for="check" class="checkbtn">
+        <i (click)="ativarMenu()" class="fa fa-bars"></i>
+    </label>
+
 </nav>

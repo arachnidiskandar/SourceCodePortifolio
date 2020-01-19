@@ -2,30 +2,69 @@
 
 nav {
     flex:0 1 100%;
-    padding: 1vh;
-    @media screen and (max-width: 500px) {
-        justify-content: center;
-    }
-    @media screen and (min-width:501px) {
-        justify-content: flex-end;
-    }
-    p {
-        font-weight: bold;
-        font-size: 20px;
-    }
-    a {
-        color: $primary;
-        i {
-            font-size: 30px;
-            color: white;
+    padding: 0vh 1vw;
+    div:first-child {
+        h5 {
+            margin: 0;
+        }
+        span {
+            font-size: 14px;
         }
     }
-    
-    p, i {
-        margin: 2px 2vw;
+    #opcoes {
+        display: flex;
+        justify-content: flex-end;
+        p {
+            font-weight: bold;
+            font-size: 20px;
+            margin: 0;
+        }
+        a {
+            i {
+                font-size: 30px;
+            }
+        }
+        p, i {
+            margin: 1vw;
+            border-bottom: solid 1px transparent;
+        }
+        p:hover, a:hover, i:hover {
+            border-bottom: solid 1px;
+            cursor: pointer;
+        }
     }
-    p:hover, a:hover {
-        color: #c0c0c0;
+    .checkbtn {
+        font-size: 30px;
         cursor: pointer;
+        display: none;
+    }
+    #check {
+        display: none;
+    }
+    @media screen and (max-width: 600px) {
+        #opcoes {
+            display: none;
+        }
+        #opcoes.responsivo {
+            background-color: white;
+            position: fixed;
+            top: 8vh;
+            right: 0px;
+            width: 100%;
+            height: 100vh;
+            display: block;
+            text-align: center;
+            z-index: 1;
+            a, p, i {
+                color: $primary;
+                font-size: 18px;
+            }
+            i {
+                margin: 2vw;
+            }
+        }
+        .checkbtn {
+            display: block;
+        }
     }
 }
