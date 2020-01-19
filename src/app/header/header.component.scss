@@ -2,22 +2,27 @@
 
 nav {
     flex:0 1 100%;
-    color: $primary;
+    padding: 1vh;
+    @media screen and (max-width: 500px) {
+        justify-content: center;
+    }
+    @media screen and (min-width:501px) {
+        justify-content: flex-end;
+    }
     p {
         font-weight: bold;
         font-size: 20px;
     }
-    padding: 1vh;
-    background-color: white;
     a {
         color: $primary;
         i {
             font-size: 30px;
+            color: white;
         }
     }
     
     p, i {
-        margin: 2px 15px;
+        margin: 2px 2vw;
     }
     p:hover, a:hover {
         color: #c0c0c0;

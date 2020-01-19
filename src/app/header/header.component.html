@@ -1,7 +1,11 @@
-<nav class="d-flex flex justify-content-end fixed-top">
+<nav [@mudarNavBar]="estado" class="d-flex fixed-top navbar">
     <p>Projetos</p>
     <p>Sobre</p>
     <p>Contato</p>
-    <a href="https://github.com/arachnidiskandar"><i class="fa fa-github mr-3"></i></a>
-    <a href="https://www.linkedin.com/in/augusto-rafael-santos-da-silva-b957b5162/"><i class="fa fa-linkedin"></i></a>
+    <a href="https://github.com/arachnidiskandar">
+        <i [ngStyle]="{'color': estado === 'inicial' ? 'white' : '#4168a3' }" class="fa fa-github"></i>
+    </a>
+    <a class="mr-2" href="https://www.linkedin.com/in/augusto-rafael-santos-da-silva-b957b5162/">
+        <i [ngStyle]="{'color': estado === 'inicial' ? 'white' : '#4168a3' }" class="fa fa-linkedin"></i>
+    </a>
 </nav>
