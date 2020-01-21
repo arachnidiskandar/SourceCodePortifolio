@@ -3,7 +3,7 @@
         <h5>Augusto Rafael</h5>
         <span>Desenvolvedor Front-End</span>
     </div>
-    <div id="opcoes" [class.ativa]="menu">
+    <div (clickOutside)="mudarMenu($event)" #opcoes id="opcoes" [class.ativa]="menu">
         <ul>
             <li><span>Projetos</span></li>
             <li><span>Sobre</span></li>
@@ -21,7 +21,6 @@
     </div>
     <input type="checkbox" id="check">
     <label for="check" id="checkbtn">
-        <i (click)="ativarMenu()" class="fa fa-bars"></i>
+        <i (click)="mudarMenu($event)" class="fa fa-bars"></i>
     </label>
-
 </nav>

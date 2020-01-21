@@ -4,7 +4,7 @@ nav {
     flex:0 1 100%;
     padding: 0vh 1vw;
     align-items: center;
-    height: 9vh;
+    height: 8.1vh;
     div:first-child {
         h5 {
             margin: 0;
@@ -51,15 +51,16 @@ nav {
     #opcoes {
         position: absolute;
         top: 8vh;
-        height: 91vh;
+        height: 92.1vh;
         right: 0px;
         background-color: white;
         display: flex;
         width: 50vw;
         flex-direction: column-reverse;
         align-items: center;
+        z-index: 99;
         transform: translateX(100%);
-        transition: transform 0.4s ease-in;
+        transition: transform 0.2s ease-in;
         li, i {
             color: $primary;
             font-size: 14px;

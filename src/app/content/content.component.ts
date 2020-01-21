@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MEUS_PROJETOS } from '../shared/projetos';
+import { NavbarService } from '../shared/services/navbar.service';
 
 @Component({
   selector: 'app-content',
@@ -8,9 +9,11 @@ import { MEUS_PROJETOS } from '../shared/projetos';
 })
 export class ContentComponent implements OnInit {
   projetos = MEUS_PROJETOS;
-  constructor() { }
+  aparecendoMenu: boolean;
+
+  constructor(private navbarService: NavbarService) { }
 
   ngOnInit() {
+    this.navbarService.navbarAparecendo.subscribe(data => this.aparecendoMenu = data);
   }
-
 }

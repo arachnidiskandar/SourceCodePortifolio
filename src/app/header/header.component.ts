@@ -1,5 +1,6 @@
-import { Component, OnInit, HostListener, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, HostListener, ElementRef, ViewChild, Output, EventEmitter } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
+import { NavbarService } from '../shared/services/navbar.service';
 
 @Component({
   selector: 'app-header',
@@ -19,20 +20,31 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
       transition('final=>inicial', animate('200ms'))
     ])
   ],
-  encapsulation: ViewEncapsulation.None
 })
 export class HeaderComponent implements OnInit {
   estado = 'inicial';
   menu = false;
 
-  @HostListener('window:scroll', ['$event'])
-    onScroll(event) {
-      window.pageYOffset > 560 ? this.estado = 'final' : this.estado = 'inicial';
+  @ViewChild('opcoes', { static: false }) opcoes;
+
+  @HostListener('window:scroll')
+  onScroll() {
+    window.pageYOffset > 560 ? this.estado = 'final' : this.estado = 'inicial';
   }
-  constructor() { }
+
+  @HostListener('document:click', ['$event.target'])
+  clickOut(targetElement) {
+    if (!this.eleRef.nativeElement.contains(targetElement) &&
+      this.opcoes.nativeElement.classList.contains('ativa')) {
+      this.mudarMenu(event);
+    }
+  }
+
+  constructor(private eleRef: ElementRef, private navBarService: NavbarService) { }
 
   ngOnInit() {
   }
+
   mudarEstilo() {
     if (this.estado === 'inicial') {
       return {
@@ -46,12 +58,16 @@ export class HeaderComponent implements OnInit {
       };
     }
   }
-  ativarMenu() {
-    document.body.style.overflow = 'hidden';
-    console.log(document.body.style.overflow);
+  mudarMenu($event) {
+    $event.stopPropagation();
+    this.gerenciarBody();
     if (window.pageYOffset < 560) {
-      this.estado = 'final';
+      this.estado === 'final' ? this.estado = 'inicial' : this.estado = 'final';
     }
     this.menu ? this.menu = false : this.menu = true;
+    this.navBarService.updatedNavbar(this.menu);
+  }
+  gerenciarBody() {
+    document.body.style.overflow === 'hidden' ? document.body.style.overflow = 'auto' : document.body.style.overflow = 'hidden';
   }
 }
