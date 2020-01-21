@@ -3,6 +3,8 @@
 nav {
     flex:0 1 100%;
     padding: 0vh 1vw;
+    align-items: center;
+    height: 9vh;
     div:first-child {
         h5 {
             margin: 0;
@@ -14,24 +16,26 @@ nav {
     #opcoes {
         display: flex;
         justify-content: flex-end;
-        p {
-            font-weight: bold;
-            font-size: 20px;
-            margin: 0;
-        }
-        a {
-            i {
-                font-size: 30px;
+        ul {
+            li > span:hover, i:hover {
+                border-bottom: solid 1px;
+                cursor: pointer;
+            }
+            li {
+                font-weight: bold;
+                font-size: 20px;
+                margin: 0;
+                list-style: none;
+                margin: 1vw;
+                border-bottom: solid 1px transparent;
+                a {
+                    i {
+                        font-size: 30px;
+                    }
+                }
             }
         }
-        p, i {
-            margin: 1vw;
-            border-bottom: solid 1px transparent;
-        }
-        p:hover, a:hover, i:hover {
-            border-bottom: solid 1px;
-            cursor: pointer;
-        }
+        
     }
     .checkbtn {
         font-size: 30px;
@@ -41,30 +45,30 @@ nav {
     #check {
         display: none;
     }
-    @media screen and (max-width: 600px) {
-        #opcoes {
-            display: none;
+}
+
+@media screen and (max-width: 768px) {
+    #opcoes {
+        position: absolute;
+        top: 8vh;
+        height: 91vh;
+        right: 0px;
+        background-color: white;
+        display: flex;
+        width: 50vw;
+        flex-direction: column-reverse;
+        align-items: center;
+        transform: translateX(100%);
+        transition: transform 0.4s ease-in;
+        li, i {
+            color: $primary;
+            font-size: 14px;
         }
-        #opcoes.responsivo {
-            background-color: white;
-            position: fixed;
-            top: 8vh;
-            right: 0px;
-            width: 100%;
-            height: 100vh;
-            display: block;
-            text-align: center;
-            z-index: 1;
-            a, p, i {
-                color: $primary;
-                font-size: 18px;
-            }
-            i {
-                margin: 2vw;
-            }
-        }
-        .checkbtn {
-            display: block;
-        }
+    }
+    #opcoes.ativa {
+        transform: translateX(0%);
+    }
+    #checkbtn {
+        display: block;
     }
 }

@@ -1,5 +1,4 @@
-import { Component, OnInit, HostListener } from '@angular/core';
-import { ClassGetter } from '@angular/compiler/src/output/output_ast';
+import { Component, OnInit, HostListener, ViewEncapsulation } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 
 @Component({
@@ -16,20 +15,11 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
         color: ' #4168a3',
         backgroundColor: 'white'
       })),
-      transition('inicial=>final', animate('2ms')),
-      transition('final=>inicial', animate('2ms'))
+      transition('inicial=>final', animate('200ms')),
+      transition('final=>inicial', animate('200ms'))
     ])
-    // trigger('mostrarMenu', [
-    //   state('inicial', style({
-    //     top: '0vh'
-    //   })),
-    //   state('final', style({
-    //     top: '8vh'
-    //   })),
-    //   transition('inicial=>final', animate('2000ms')),
-    //   transition('final=>inicial', animate('2000ms'))
-    // ])
-  ]
+  ],
+  encapsulation: ViewEncapsulation.None
 })
 export class HeaderComponent implements OnInit {
   estado = 'inicial';
@@ -57,6 +47,8 @@ export class HeaderComponent implements OnInit {
     }
   }
   ativarMenu() {
+    document.body.style.overflow = 'hidden';
+    console.log(document.body.style.overflow);
     if (window.pageYOffset < 560) {
       this.estado = 'final';
     }

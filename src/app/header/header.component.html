@@ -3,19 +3,24 @@
         <h5>Augusto Rafael</h5>
         <span>Desenvolvedor Front-End</span>
     </div>
-    <div id="opcoes" [class.responsivo]="menu">
-        <p>Projetos</p>
-        <p>Sobre</p>
-        <p>Contato</p>
-        <a [ngStyle]="mudarEstilo()" href="https://github.com/arachnidiskandar">
-            <i class="fa fa-github"></i>
-        </a>
-        <a [ngStyle]="mudarEstilo()" href="https://www.linkedin.com/in/augusto-rafael-santos-da-silva-b957b5162/">
-            <i class="fa fa-linkedin"></i>
-        </a>
+    <div id="opcoes" [class.ativa]="menu">
+        <ul>
+            <li><span>Projetos</span></li>
+            <li><span>Sobre</span></li>
+            <li><span>Contato</span></li>
+            <li><a [ngStyle]="mudarEstilo()" href="https://github.com/arachnidiskandar">
+                    <i class="fa fa-github"></i>
+                </a></li>
+            <li><a [ngStyle]="mudarEstilo()"
+                    href="https://www.linkedin.com/in/augusto-rafael-santos-da-silva-b957b5162/">
+                    <i class="fa fa-linkedin"></i>
+                </a></li>
+        </ul>
+
+
     </div>
     <input type="checkbox" id="check">
-    <label for="check" class="checkbtn">
+    <label for="check" id="checkbtn">
         <i (click)="ativarMenu()" class="fa fa-bars"></i>
     </label>
 
