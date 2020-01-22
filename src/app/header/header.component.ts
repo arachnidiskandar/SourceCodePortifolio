@@ -1,7 +1,5 @@
-import { Component, OnInit, HostListener, ElementRef, ViewChild, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, HostListener, ElementRef, ViewChild, Renderer2 } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
-import { NavbarService } from '../shared/services/navbar.service';
-
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -36,11 +34,11 @@ export class HeaderComponent implements OnInit {
   clickOut(targetElement) {
     if (!this.eleRef.nativeElement.contains(targetElement) &&
       this.opcoes.nativeElement.classList.contains('ativa')) {
-      this.mudarMenu(event);
+        this.mudarMenu(event);
     }
   }
 
-  constructor(private eleRef: ElementRef, private navBarService: NavbarService) { }
+  constructor(private eleRef: ElementRef, private renderer: Renderer2) { }
 
   ngOnInit() {
   }
@@ -65,9 +63,10 @@ export class HeaderComponent implements OnInit {
       this.estado === 'final' ? this.estado = 'inicial' : this.estado = 'final';
     }
     this.menu ? this.menu = false : this.menu = true;
-    this.navBarService.updatedNavbar(this.menu);
   }
   gerenciarBody() {
-    document.body.style.overflow === 'hidden' ? document.body.style.overflow = 'auto' : document.body.style.overflow = 'hidden';
+    document.body.style.overflow === 'hidden' ?
+    this.renderer.setStyle(document.body, 'overflow', 'auto') :
+    this.renderer.setStyle(document.body, 'overflow', 'hidden');
   }
 }

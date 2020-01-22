@@ -1,26 +1,41 @@
 <nav [@mudarNavBar]="estado" class="d-flex fixed-top navbar">
-    <div>
-        <h5>Augusto Rafael</h5>
-        <span>Desenvolvedor Front-End</span>
-    </div>
-    <div (clickOutside)="mudarMenu($event)" #opcoes id="opcoes" [class.ativa]="menu">
-        <ul>
-            <li><span>Projetos</span></li>
-            <li><span>Sobre</span></li>
-            <li><span>Contato</span></li>
-            <li><a [ngStyle]="mudarEstilo()" href="https://github.com/arachnidiskandar">
-                    <i class="fa fa-github"></i>
-                </a></li>
-            <li><a [ngStyle]="mudarEstilo()"
-                    href="https://www.linkedin.com/in/augusto-rafael-santos-da-silva-b957b5162/">
-                    <i class="fa fa-linkedin"></i>
-                </a></li>
-        </ul>
-
-
-    </div>
-    <input type="checkbox" id="check">
-    <label for="check" id="checkbtn">
-        <i (click)="mudarMenu($event)" class="fa fa-bars"></i>
-    </label>
+  <div>
+    <h5>Augusto Rafael</h5>
+    <span>Desenvolvedor Front-End</span>
+  </div>
+  <div (click)="mudarMenu($event)" class="bg-menu" *ngIf="menu">
+  </div>
+  <div
+    #opcoes
+    id="opcoes"
+    [class.ativa]="menu"
+  >
+    <ul class="d-flex">
+      <li><span>Projetos</span></li>
+      <li><span>Sobre</span></li>
+      <li><span>Contato</span></li>
+      <div class="d-flex" id="icones">
+        <li>
+          <a
+            [ngStyle]="mudarEstilo()"
+            href="https://github.com/arachnidiskandar"
+          >
+            <i class="fa fa-github"></i>
+          </a>
+        </li>
+        <li>
+          <a
+            [ngStyle]="mudarEstilo()"
+            href="https://www.linkedin.com/in/augusto-rafael-santos-da-silva-b957b5162/"
+          >
+            <i class="fa fa-linkedin"></i>
+          </a>
+        </li>
+      </div>
+    </ul>
+  </div>
+  <input type="checkbox" id="check" />
+  <label for="check" id="checkbtn">
+    <i (click)="mudarMenu($event)" class="fa fa-bars"></i>
+  </label>
 </nav>
