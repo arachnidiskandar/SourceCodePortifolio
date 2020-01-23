@@ -23,22 +23,12 @@ export class HeaderComponent implements OnInit {
   estado = 'inicial';
   menu = false;
 
-  @ViewChild('opcoes', { static: false }) opcoes;
-
   @HostListener('window:scroll')
   onScroll() {
-    window.pageYOffset > 560 ? this.estado = 'final' : this.estado = 'inicial';
+    window.pageYOffset > window.innerHeight * 0.9 ? this.estado = 'final' : this.estado = 'inicial';
   }
 
-  @HostListener('document:click', ['$event.target'])
-  clickOut(targetElement) {
-    if (!this.eleRef.nativeElement.contains(targetElement) &&
-      this.opcoes.nativeElement.classList.contains('ativa')) {
-        this.mudarMenu(event);
-    }
-  }
-
-  constructor(private eleRef: ElementRef, private renderer: Renderer2) { }
+  constructor(private renderer: Renderer2) { }
 
   ngOnInit() {
   }
@@ -56,13 +46,12 @@ export class HeaderComponent implements OnInit {
       };
     }
   }
-  mudarMenu($event) {
-    $event.stopPropagation();
+  mudarMenu() {
     this.gerenciarBody();
-    if (window.pageYOffset < 560) {
-      this.estado === 'final' ? this.estado = 'inicial' : this.estado = 'final';
-    }
     this.menu ? this.menu = false : this.menu = true;
+    if (window.pageYOffset < window.innerHeight * 0.9) {
+      this.estado === 'inicial' ? this.estado = 'final' : this.estado = 'inicial';
+    }
   }
   gerenciarBody() {
     document.body.style.overflow === 'hidden' ?

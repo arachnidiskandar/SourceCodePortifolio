@@ -4,7 +4,7 @@ nav {
     flex:0 1 100%;
     padding: 0vh 1vw;
     align-items: center;
-    height: 8.1vh;
+    height: 9vh;
     div:first-child {
         h5 {
             margin: 0;
@@ -17,6 +17,9 @@ nav {
         display: flex;
         justify-content: flex-end;
         ul {
+          margin: 0;
+          padding: 0;
+          display: flex;
             li > span:hover, i:hover {
                 border-bottom: solid 1px;
                 cursor: pointer;
@@ -33,6 +36,9 @@ nav {
                         font-size: 30px;
                     }
                 }
+            }
+            #icones {
+              display: flex;
             }
         }
 
@@ -51,19 +57,20 @@ nav {
 @media screen and (max-width: 768px) {
     #opcoes {
         position: absolute;
-        top: 8vh;
-        height: 92.1vh;
+        top: 9vh;
+        height: 91vh;
         right: 0px;
         background-color: white;
         display: flex;
+        justify-content: center !important;
         width: 50vw;
-        flex-direction: column-reverse;
-        align-items: center;
         z-index: 99;
         transform: translateX(100%);
         opacity: 0;
         transition: transform 0.2s ease-in, opacity 0.2s ease-in;
         ul {
+          display: flex;
+          flex-direction: column;
           padding: 0;
           li {
             a {
@@ -82,11 +89,11 @@ nav {
         opacity: 1;
     }
     #checkbtn {
-        display: block;
+        display: block !important;
     }
 
     .bg-menu {
-      top: 8vh;
+      top: 9vh;
       position: absolute;
       width: 100vw;
       height: 100vh;

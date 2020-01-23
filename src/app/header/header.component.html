@@ -3,18 +3,17 @@
     <h5>Augusto Rafael</h5>
     <span>Desenvolvedor Front-End</span>
   </div>
-  <div (click)="mudarMenu($event)" class="bg-menu" *ngIf="menu">
+  <div (click)="mudarMenu()" class="bg-menu" *ngIf="menu">
   </div>
   <div
-    #opcoes
     id="opcoes"
     [class.ativa]="menu"
   >
-    <ul class="d-flex">
+    <ul>
       <li><span>Projetos</span></li>
       <li><span>Sobre</span></li>
       <li><span>Contato</span></li>
-      <div class="d-flex" id="icones">
+      <div id="icones">
         <li>
           <a
             [ngStyle]="mudarEstilo()"
@@ -36,6 +35,6 @@
   </div>
   <input type="checkbox" id="check" />
   <label for="check" id="checkbtn">
-    <i (click)="mudarMenu($event)" class="fa fa-bars"></i>
+    <i (click)="mudarMenu()" class="fa fa-bars"></i>
   </label>
 </nav>
