@@ -5,6 +5,7 @@ nav {
     padding: 0vh 1vw;
     align-items: center;
     height: 9vh;
+    width: 100vw;
     div:first-child {
         h5 {
             margin: 0;
@@ -57,9 +58,9 @@ nav {
 @media screen and (max-width: 768px) {
     #opcoes {
         position: absolute;
-        top: 9vh;
-        height: 91vh;
-        right: 0px;
+        top: 8vh;
+        height: 92.2vh;
+        right: 0vw;
         background-color: white;
         display: flex;
         justify-content: center !important;
@@ -90,10 +91,12 @@ nav {
     }
     #checkbtn {
         display: block !important;
+        
+        // ver pq precisou disso
     }
 
     .bg-menu {
-      top: 9vh;
+      top: 8vh;
       position: absolute;
       width: 100vw;
       height: 100vh;
