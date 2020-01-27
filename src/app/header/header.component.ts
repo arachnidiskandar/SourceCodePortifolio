@@ -7,12 +7,12 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
   animations: [
     trigger('mudarNavBar', [
       state('inicial', style({
-        color: 'white',
+        color: '#fcfcfc',
         backgroundColor: 'transparent'
       })),
       state('final', style({
         color: ' #4168a3',
-        backgroundColor: 'white'
+        backgroundColor: '#fcfcfc'
       })),
       transition('inicial=>final', animate('200ms')),
       transition('final=>inicial', animate('200ms'))
@@ -36,8 +36,8 @@ export class HeaderComponent implements OnInit {
   mudarEstilo() {
     if (this.estado === 'inicial') {
       return {
-        color: 'white',
-        borderBottom: 'white'
+        color: '#fcfcfc',
+        borderBottom: '#fcfcfc'
       };
     } else {
       return {

@@ -5,7 +5,6 @@ nav {
     padding: 0vh 1vw;
     align-items: center;
     height: 9vh;
-    width: 100vw;
     div:first-child {
         h5 {
             margin: 0;
@@ -59,9 +58,9 @@ nav {
     #opcoes {
         position: absolute;
         top: 8vh;
-        height: 92.2vh;
+        height: 100vh;
         right: 0vw;
-        background-color: white;
+        background-color: $white;
         display: flex;
         justify-content: center !important;
         width: 50vw;
@@ -96,7 +95,7 @@ nav {
     }
 
     .bg-menu {
-      top: 8vh;
+      top: 9vh;
       position: absolute;
       width: 100vw;
       height: 100vh;
