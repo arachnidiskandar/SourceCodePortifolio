@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener, ElementRef, ViewChild, Renderer2 } from '@angular/core';
+import { Component, OnInit, HostListener, Renderer2 } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 @Component({
   selector: 'app-header',
@@ -37,12 +37,14 @@ export class HeaderComponent implements OnInit {
     if (this.estado === 'inicial') {
       return {
         color: '#fcfcfc',
-        borderBottom: '#fcfcfc'
+        borderBottom: '#fcfcfc',
+        font: '#fcfcfc'
       };
     } else {
       return {
         color: '#4168a3',
-        borderBottom: '#4168a3'
+        borderBottom: '#4168a3',
+        font: '#4168a3'
       };
     }
   }

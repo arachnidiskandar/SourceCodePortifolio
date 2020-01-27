@@ -14,7 +14,6 @@
   .info-projetos {
     background-color: white;
     color: $primary;
-    
     .titulo-projeto {
       h5 {
         margin: 0;
@@ -25,9 +24,12 @@
         margin-top: 5px;
       }
     }
+    p {
+      min-height: 100px;
+    }
   }
   .detalhes {
-    width: auto;
+    width: 100%;
     height: 100%;
     top: 100%;
     position: absolute;

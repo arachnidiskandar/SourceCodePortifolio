@@ -32,6 +32,7 @@ nav {
                 margin: 1vw;
                 border-bottom: solid 1px transparent;
                 a {
+                    color: red;
                     i {
                         font-size: 30px;
                     }
@@ -90,8 +91,6 @@ nav {
     }
     #checkbtn {
         display: block !important;
-        
-        // ver pq precisou disso
     }
 
     .bg-menu {

@@ -9,6 +9,20 @@ export interface Projeto {
 
 export const MEUS_PROJETOS: Projeto[] = [
     {
+        nome: 'Meu Portfólio',
+        descricao: 'Esse projeto é o site que você está vendo. ' +
+                   'Nele tentei aplicar a maioria das coisas que eu aprendi nos meus primeiros 6 meses.',
+        detalhes: [
+            'Angular',
+            'Sass',
+            'Animações com CSS',
+            'Responsividade para mobile',
+            'Manipulação do DOM com Renderer2 do Angular',
+            'Interfaces com Typescript'
+        ],
+        github: 'https://github.com/arachnidiskandar/SourceCodePortifolio'
+    },
+    {
         nome: 'Produtores Consumidores',
         descricao: 'Trabalho de sistemas operacionais feito em python para resolver o problema "Produtores e Consumidores"',
         detalhes: [
@@ -16,53 +30,26 @@ export const MEUS_PROJETOS: Projeto[] = [
             'Programação orientada a objetos',
             'Gerenciamento de concorrência de variáveis'
         ],
-        online: true,
         github: 'https://www.github.com/arachnidiskandar/ProdutoresConsumidores'
     },
     {
-        nome: 'Produtores Consumidores',
-        descricao: 'Trabalho de sistemas operacionais feito em python para resolver o problema "Produtores e Consumidores"',
+        nome: 'Loja virtual básica',
+        descricao: 'Trabalho da cadeira de Web II. Foi nesse projeto que eu aprendi o básico de Git trabalhando em grupo.',
         detalhes: [
-            'Gerenciamento de múltiplas threads do processador',
-            'Programação orientada a objetos',
-            'Gerenciamento de concorrência de variáveis'
-        ]
+            'HTML/CSS/Javascript',
+            'PHP',
+            'Gerenciamento de Cógido com Git',
+            'Manipulação do DOM com Vanilla JS'
+        ],
+        github: 'https://github.com/MiguelRebelatto/LojaWebll'
     },
     {
-        nome: 'Produtores Consumidores',
-        descricao: 'Trabalho de sistemas operacionais feito em python para resolver o problema "Produtores e Consumidores"',
+        nome: 'Algoritmo Busca DFS',
+        descricao: 'Implementação do algoritmo de Busca DFS em javascript para o trabalho de Inteligência Artificial.',
         detalhes: [
-            'Gerenciamento de múltiplas threads do processador',
-            'Programação orientada a objetos',
-            'Gerenciamento de concorrência de variáveis'
-        ]
-    },
-    {
-        nome: 'Produtores Consumidores',
-        descricao: 'Trabalho de sistemas operacionais feito em python para resolver o problema "Produtores e Consumidores"',
-        detalhes: [
-            'Gerenciamento de múltiplas threads do processador',
-            'Programação orientada a objetos',
-            'Gerenciamento de concorrência de variáveis'
-        ]
-    },
-    {
-        nome: 'Produtores Consumidores',
-        descricao: 'Trabalho de sistemas operacionais feito em python para resolver o problema "Produtores e Consumidores"',
-        detalhes: [
-            'Gerenciamento de múltiplas threads do processador',
-            'Programação orientada a objetos',
-            'Gerenciamento de concorrência de variáveis'
-        ]
-    },
-    {
-        nome: 'Produtores Consumidores',
-        descricao: 'Trabalho de sistemas operacionais feito em python para resolver o problema "Produtores e Consumidores"',
-        detalhes: [
-            'Gerenciamento de múltiplas threads do processador',
-            'Programação orientada a objetos',
-            'Gerenciamento de concorrência de variáveis'
-        ]
-        
+            'Vanilla JS',
+            'Algoritmo de Busca'
+        ],
+        github: 'https://github.com/arachnidiskandar/BuscaDFS'
     }
 ];

@@ -10,9 +10,9 @@
     [class.ativa]="menu"
   >
     <ul>
-      <li><span>Projetos</span></li>
-      <li><span>Sobre</span></li>
-      <li><span>Contato</span></li>
+      <li><a (click)="mudarMenu()" href="#sobre" [ngStyle]="mudarEstilo()">Sobre</a></li>
+      <li><a (click)="mudarMenu()" href="#projetos" [ngStyle]="mudarEstilo()">Projetos</a></li>
+      <li><a (click)="mudarMenu()" href="#contato" [ngStyle]="mudarEstilo()">Contato</a></li>
       <div id="icones">
         <li>
           <a
