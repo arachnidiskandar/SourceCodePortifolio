@@ -5,6 +5,7 @@ export interface Projeto {
     detalhes: string[];
     online?: boolean;
     github?: string;
+    linkImage?: string;
 }
 
 export const MEUS_PROJETOS: Projeto[] = [
@@ -20,7 +21,8 @@ export const MEUS_PROJETOS: Projeto[] = [
             'Manipulação do DOM com Renderer2 do Angular',
             'Interfaces com Typescript'
         ],
-        github: 'https://github.com/arachnidiskandar/SourceCodePortifolio'
+        github: 'https://github.com/arachnidiskandar/SourceCodePortifolio',
+        linkImage: '../../assets/images/img_proj.png'
     },
     {
         nome: 'Produtores Consumidores',

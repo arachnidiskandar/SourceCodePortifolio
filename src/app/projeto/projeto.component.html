@@ -1,5 +1,6 @@
 <div class="projeto">
-    <img (click)="mudarEstado()" class="pointer" src="https://via.placeholder.com/600">
+<img (click)="mudarEstado()" *ngIf="projeto.linkImage" class="pointer img-prod" src="{{ projeto.linkImage }}">
+<img (click)="mudarEstado()" *ngIf="!projeto.linkImage" class="pointer img-prod" src="https://via.placeholder.com/600">
     <div class="pt-1 info-projetos d-flex flex-column">
         <div class="titulo-projeto m-2 d-flex justify-content-between">
             <h5>{{ projeto.nome }}</h5>
