@@ -19,7 +19,8 @@ export const MEUS_PROJETOS: Projeto[] = [
             'Animações com CSS',
             'Responsividade para mobile',
             'Manipulação do DOM com Renderer2 do Angular',
-            'Interfaces com Typescript'
+            'Interfaces com Typescript',
+            'Pre-Bootstrap Loading'
         ],
         github: 'https://github.com/arachnidiskandar/SourceCodePortifolio',
         linkImage: '../../assets/images/img_proj.png'
@@ -32,7 +33,8 @@ export const MEUS_PROJETOS: Projeto[] = [
             'Programação orientada a objetos',
             'Gerenciamento de concorrência de variáveis'
         ],
-        github: 'https://www.github.com/arachnidiskandar/ProdutoresConsumidores'
+        github: 'https://www.github.com/arachnidiskandar/ProdutoresConsumidores',
+        linkImage: '../../assets/images/img_python.png'
     },
     {
         nome: 'Loja virtual básica',
@@ -52,6 +54,7 @@ export const MEUS_PROJETOS: Projeto[] = [
             'Vanilla JS',
             'Algoritmo de Busca'
         ],
-        github: 'https://github.com/arachnidiskandar/BuscaDFS'
+        github: 'https://github.com/arachnidiskandar/BuscaDFS',
+        linkImage: '../../assets/images/img_js.png'
     }
 ];

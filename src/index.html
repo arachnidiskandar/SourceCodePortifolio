@@ -11,6 +11,102 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
+  <style type="text/css" class="preloader">
+    div.splash {
+        background-color: #fcfcfc;
+        bottom: 0px ;
+        display: flex ;
+        left: 0px ;
+        position: fixed ;
+        right: 0px ;
+        top: 0px ;
+    }
+
+    div.splash--loaded {
+        opacity: 0 ;
+        transition: opacity 500ms ease ;
+    }
+    .loading-text {
+      width: 90px;
+      position: absolute;
+      top: calc(50% + 45px);
+      left: calc(50% - 45px);
+      text-align: center;
+    }
+    .spinner::before {
+      content: "";
+      box-sizing: border-box;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      height: 60px;
+      width: 60px;
+      margin-top: -30px;
+      margin-left: -30px;
+      border-radius: 50%;
+      border: 3px solid lightgray;
+      border-top-color: #4168a3;
+      animation: spinner 0.7s linear infinite;
+      z-index: 9999;
+    }
+
+  @keyframes spinner {
+    to {
+        transform: rotate(360deg);
+    }
+  }
+</style>
+
+<div class="preloader splash spinner">
+  <div class="preloader loading-text">Carregando...</div>
+</div>
+
+<script type="text/javascript" class="preloader">
+    (function listenForAppReadyEvent() {
+        // Gather DOM references.
+        var splash = document.querySelector( ".splash" );
+        var preloaders = document.querySelectorAll( ".preloader" );
+        // Listen for our "appready" message event.
+        window.addEventListener( "message", handleMessage, false );
+
+        // ----------------------------------------------------------------------- //
+        // ----------------------------------------------------------------------- //
+
+        // I handle "message" events on the current window.
+        function handleMessage( event ) {
+            if ( event.data === "appready" ) {
+                window.removeEventListener( "message", handleMessage, false );
+                removeSplashScreen();
+            }
+            // NOTE ON SECURITY: According to the documentation on postMessage(), you
+            // should always test the Origin and [optionally] the Source attributes
+            // of the "message" event in order to make sure the event is coming from
+            // the expected place. However, for something as innocuous as the
+            // "splash page", I'm omitting such a security check. Since this handler
+            // does nothing but remove DOM elements from the static portion of the
+            // page, there's no security risk here that I can see. Such a test would
+            // add unnecessary complexity. That said, testing the origin is a best
+            // practice that should be done with anything that involves passing
+            // around sensitive data.
+        }
+        // I remove the splash screen and elements from the DOM, exposing the loaded
+        // application beneath them.
+        function removeSplashScreen() {
+            splash.classList.add( "splash--loaded" );
+            // Once the splash screen has been faded-out, let's rip all of the
+            // preloader-related DOM elements out of the document.
+            setTimeout(
+                function removeDomElements() {
+                    for ( var i = 0 ; i < preloaders.length ; i++ ) {
+                        var item = preloaders[ i ];
+                        item.parentNode.removeChild( item );
+                    }
+                },
+                500
+            );
+        }
+    })();
+</script>
     <app-root></app-root>
 </body>
 </html>
