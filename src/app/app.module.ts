@@ -6,6 +6,10 @@ import { HeaderComponent } from './header/header.component';
 import { ContentComponent } from './content/content.component';
 import { ProjetosComponent } from './projetos/projetos.component';
 import { ProjetoComponent } from './projeto/projeto.component';
+import { NgxKjuaModule } from 'ngx-kjua';
+import { AppRoutingModule } from './app-routing.module';
+import { TodosProjetosComponent } from './todos-projetos/todos-projetos.component';
+import { WifiQRCodeComponent } from './wifi-qrcode/wifi-qrcode.component';
 
 @NgModule({
   declarations: [
@@ -13,11 +17,15 @@ import { ProjetoComponent } from './projeto/projeto.component';
     HeaderComponent,
     ContentComponent,
     ProjetosComponent,
-    ProjetoComponent
+    ProjetoComponent,
+    TodosProjetosComponent,
+    WifiQRCodeComponent
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NgxKjuaModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

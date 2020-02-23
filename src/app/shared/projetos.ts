@@ -20,7 +20,8 @@ export const MEUS_PROJETOS: Projeto[] = [
             'Responsividade para mobile',
             'Manipulação do DOM com Renderer2 do Angular',
             'Interfaces com Typescript',
-            'Pre-Bootstrap Loading'
+            'Pre-Bootstrap Loading',
+            'Routing'
         ],
         github: 'https://github.com/arachnidiskandar/SourceCodePortifolio',
         linkImage: '../../assets/images/img_proj.png'

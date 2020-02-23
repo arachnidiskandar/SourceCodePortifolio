@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { AppReadyEvent } from './shared/AppReadyEvent';
 
 @Component({
@@ -14,14 +14,10 @@ export class AppComponent implements OnInit {
     this.appReadyEvent = appReadyEvent;
   }
   ngOnInit() {
-    // FOR THE SAKE OF THE DEMO, let's add a small delay here so that the app can be
-    // in a "loading" state for a "visible" amount of time.
-    setTimeout(
-        () => {
-            this.appReadyEvent.trigger();
-        },
-        1000
-    );
-
+    document.onreadystatechange = () => {
+      if (document.readyState === 'complete') {
+        this.appReadyEvent.trigger();
+      }
+    };
   }
 }
