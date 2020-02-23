@@ -10,9 +10,9 @@
     [class.ativa]="menu"
   >
     <ul>
-      <li><a (click)="mudarMenu()" href="#sobre" [ngStyle]="mudarEstilo()">Sobre</a></li>
-      <li><a (click)="mudarMenu()" href="#projetos" [ngStyle]="mudarEstilo()">Projetos</a></li>
-      <li><a (click)="mudarMenu()" href="#contato" [ngStyle]="mudarEstilo()">Contato</a></li>
+      <li><a (click)="mudarMenu()" routerLink="/principal" fragment="sobre" [ngStyle]="mudarEstilo()">Sobre</a></li>
+      <li><a (click)="mudarMenu()" routerLink="/principal" fragment="projetos" [ngStyle]="mudarEstilo()">Projetos</a></li>
+      <li><a (click)="mudarMenu()" routerLink="/principal" fragment="contato" [ngStyle]="mudarEstilo()">Contato</a></li>
       <div id="icones">
         <li>
           <a

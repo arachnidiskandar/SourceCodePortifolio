@@ -56,8 +56,8 @@ export class HeaderComponent implements OnInit {
     }
   }
   gerenciarBody() {
-    document.body.style.overflow === 'hidden' ?
-    this.renderer.setStyle(document.body, 'overflow', 'auto') :
-    this.renderer.setStyle(document.body, 'overflow', 'hidden');
+    // document.body.style.overflow === 'hidden' ?
+    // this.renderer.setStyle(document.body, 'overflow', 'auto') :
+    // this.renderer.setStyle(document.body, 'overflow', 'hidden');
   }
 }
