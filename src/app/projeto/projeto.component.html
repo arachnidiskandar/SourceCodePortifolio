@@ -19,7 +19,7 @@
         </div>
         <div class="botoes d-flex justify-content-center">
             <div class="d-flex m-3">
-                <button *ngIf="projeto.online" class="btn btn-primary mr-3"><a *ngIf="projeto.online" href="{{ projeto.site }}" target="_blank">Ver Online</a></button>
+                <button *ngIf="projeto.online" class="btn btn-primary mr-3"><a *ngIf="projeto.online" (click)="redirectTo(projeto.rota)">Ver Online</a></button>
                 <button class="btn btn-primary"><a href="{{ projeto.github }}" target="_blank">Código Fonte</a></button>
             </div>
         </div>

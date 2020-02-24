@@ -8,14 +8,13 @@ const routes: Routes = [
   { path: '', redirectTo: '/principal', pathMatch: 'full' },
   { path: 'principal', component: ContentComponent},
   { path: 'projetos', component: TodosProjetosComponent },
-  { path: 'teste', component: WifiQRCodeComponent}
+  { path: 'wifi', component: WifiQRCodeComponent}
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes, {
     anchorScrolling: 'enabled',
     onSameUrlNavigation: 'reload',
-    scrollPositionRestoration: 'enabled',
-    enableTracing: true
+    scrollPositionRestoration: 'enabled'
   })],
   exports: [RouterModule]
 })

@@ -10,7 +10,8 @@ import { NgxKjuaModule } from 'ngx-kjua';
 import { AppRoutingModule } from './app-routing.module';
 import { TodosProjetosComponent } from './todos-projetos/todos-projetos.component';
 import { WifiQRCodeComponent } from './wifi-qrcode/wifi-qrcode.component';
-
+import { FormsModule } from '@angular/forms';
+import { NgxPrintModule } from 'ngx-print';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +26,9 @@ import { WifiQRCodeComponent } from './wifi-qrcode/wifi-qrcode.component';
     BrowserModule,
     BrowserAnimationsModule,
     NgxKjuaModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    NgxPrintModule
   ],
   providers: [],
   bootstrap: [AppComponent]

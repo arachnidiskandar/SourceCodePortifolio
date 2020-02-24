@@ -5,6 +5,7 @@ export interface Projeto {
     detalhes: string[];
     online?: boolean;
     github?: string;
+    rota?: string;
     linkImage?: string;
 }
 
@@ -21,7 +22,7 @@ export const MEUS_PROJETOS: Projeto[] = [
             'Manipulação do DOM com Renderer2 do Angular',
             'Interfaces com Typescript',
             'Pre-Bootstrap Loading',
-            'Routing'
+            'Routas'
         ],
         github: 'https://github.com/arachnidiskandar/SourceCodePortifolio',
         linkImage: '../../assets/images/img_proj.png'
@@ -57,5 +58,18 @@ export const MEUS_PROJETOS: Projeto[] = [
         ],
         github: 'https://github.com/arachnidiskandar/BuscaDFS',
         linkImage: '../../assets/images/img_js.png'
+    },
+    {
+        nome: 'Compartilhe o seu Wi-Fi',
+        descricao: 'Um projeto simples que gera um QR Code com o acesso do Wi-Fi e gera um PDF para download.',
+        detalhes: [
+            'Angular',
+            'Conversão de HTML para PDF',
+            'Responsividade Para Mobile',
+            'Sass'
+        ],
+        online: true,
+        rota: 'wifi',
+        linkImage: '../../assets/images/img_wifi.png'
     }
 ];
