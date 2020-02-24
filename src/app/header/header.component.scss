@@ -6,6 +6,9 @@ nav {
     align-items: center;
     height: 9vh;
     div:first-child {
+        &:focus {
+            outline: none;
+        }
         h5 {
             margin: 0;
         }

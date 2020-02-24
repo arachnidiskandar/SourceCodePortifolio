@@ -1,5 +1,6 @@
 import { Component, OnInit, HostListener, Renderer2 } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
+import { Location } from '@angular/common';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -22,13 +23,20 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
 export class HeaderComponent implements OnInit {
   estado = 'inicial';
   menu = false;
-
+  paginaPrincipal = true;
   @HostListener('window:scroll')
   onScroll() {
-    window.pageYOffset > window.innerHeight * 0.9 ? this.estado = 'final' : this.estado = 'inicial';
+    if (this.location.path() === '/principal') {
+      window.pageYOffset > window.innerHeight * 0.9 ? this.estado = 'final' : this.estado = 'inicial';
+    }
   }
 
-  constructor(private renderer: Renderer2) { }
+  constructor(private location: Location, private renderer: Renderer2) {
+    if (this.location.path() !== '/principal') {
+      this.paginaPrincipal = false;
+      this.estado = 'final';
+    }
+  }
 
   ngOnInit() {
   }
@@ -48,16 +56,23 @@ export class HeaderComponent implements OnInit {
       };
     }
   }
-  mudarMenu() {
+  abrirMenu() {
     this.gerenciarBody();
     this.menu ? this.menu = false : this.menu = true;
+  }
+  mudarMenu() {
+    if (!this.paginaPrincipal) {
+      this.abrirMenu();
+      return;
+    }
+    this.abrirMenu();
     if (window.pageYOffset < window.innerHeight * 0.9) {
       this.estado === 'inicial' ? this.estado = 'final' : this.estado = 'inicial';
     }
   }
   gerenciarBody() {
-    // document.body.style.overflow === 'hidden' ?
-    // this.renderer.setStyle(document.body, 'overflow', 'auto') :
-    // this.renderer.setStyle(document.body, 'overflow', 'hidden');
+    document.body.style.overflow === 'hidden' ?
+    this.renderer.setStyle(document.body, 'overflow', 'auto') :
+    this.renderer.setStyle(document.body, 'overflow', 'hidden');
   }
 }
