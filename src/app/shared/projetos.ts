@@ -39,27 +39,6 @@ export const MEUS_PROJETOS: Projeto[] = [
         linkImage: '../../assets/images/img_python.png'
     },
     {
-        nome: 'Loja virtual básica',
-        descricao: 'Trabalho da cadeira de Web II. Foi nesse projeto que eu aprendi o básico de Git trabalhando em grupo.',
-        detalhes: [
-            'HTML/CSS/Javascript',
-            'PHP',
-            'Gerenciamento de Cógido com Git',
-            'Manipulação do DOM com Vanilla JS'
-        ],
-        github: 'https://github.com/MiguelRebelatto/LojaWebll'
-    },
-    {
-        nome: 'Algoritmo Busca DFS',
-        descricao: 'Implementação do algoritmo de Busca DFS em javascript para o trabalho de Inteligência Artificial.',
-        detalhes: [
-            'Vanilla JS',
-            'Algoritmo de Busca'
-        ],
-        github: 'https://github.com/arachnidiskandar/BuscaDFS',
-        linkImage: '../../assets/images/img_js.png'
-    },
-    {
         nome: 'Compartilhe o seu Wi-Fi',
         descricao: 'Um projeto simples que gera um QR Code com o acesso do Wi-Fi e gera um PDF para download.',
         detalhes: [

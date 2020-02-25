@@ -1,6 +1,7 @@
 import { Component, OnInit, HostListener, Renderer2 } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { Location } from '@angular/common';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -31,11 +32,15 @@ export class HeaderComponent implements OnInit {
     }
   }
 
-  constructor(private location: Location, private renderer: Renderer2) {
-    if (this.location.path() !== '/principal') {
-      this.paginaPrincipal = false;
-      this.estado = 'final';
-    }
+  constructor(private location: Location, private renderer: Renderer2, private router: Router) {
+    router.events.subscribe( () => {
+      if (location.path() !== '') {
+        if (this.location.path() !== '/principal'){
+          this.paginaPrincipal = false;
+          this.estado = 'final';
+        }
+      }
+    });
   }
 
   ngOnInit() {
