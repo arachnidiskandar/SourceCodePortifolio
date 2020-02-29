@@ -27,20 +27,10 @@ export class HeaderComponent implements OnInit {
   paginaPrincipal = true;
   @HostListener('window:scroll')
   onScroll() {
-    if (this.location.path() === '/principal') {
-      window.pageYOffset > window.innerHeight * 0.9 ? this.estado = 'final' : this.estado = 'inicial';
-    }
+    window.pageYOffset > window.innerHeight * 0.9 ? this.estado = 'final' : this.estado = 'inicial';
   }
 
-  constructor(private location: Location, private renderer: Renderer2, private router: Router) {
-    router.events.subscribe( () => {
-      if (location.path() !== '') {
-        if (this.location.path() !== '/principal') {
-          this.paginaPrincipal = false;
-          this.estado = 'final';
-        }
-      }
-    });
+  constructor(private renderer: Renderer2) {
   }
 
   ngOnInit() {
