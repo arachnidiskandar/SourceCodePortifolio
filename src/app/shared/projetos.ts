@@ -48,6 +48,7 @@ export const MEUS_PROJETOS: Projeto[] = [
             'Responsividade Para Mobile',
             'Sass'
         ],
+        github: 'https://github.com/arachnidiskandar/wifi-share',
         url: 'https://wifi-share-fa39f.firebaseapp.com/',
         online: true,
         rota: 'wifi',
