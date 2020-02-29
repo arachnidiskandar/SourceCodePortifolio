@@ -35,7 +35,7 @@ export class HeaderComponent implements OnInit {
   constructor(private location: Location, private renderer: Renderer2, private router: Router) {
     router.events.subscribe( () => {
       if (location.path() !== '') {
-        if (this.location.path() !== '/principal'){
+        if (this.location.path() !== '/principal') {
           this.paginaPrincipal = false;
           this.estado = 'final';
         }

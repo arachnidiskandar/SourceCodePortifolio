@@ -6,12 +6,9 @@ import { HeaderComponent } from './header/header.component';
 import { ContentComponent } from './content/content.component';
 import { ProjetosComponent } from './projetos/projetos.component';
 import { ProjetoComponent } from './projeto/projeto.component';
-import { NgxKjuaModule } from 'ngx-kjua';
 import { AppRoutingModule } from './app-routing.module';
 import { TodosProjetosComponent } from './todos-projetos/todos-projetos.component';
-import { WifiQRCodeComponent } from './wifi-qrcode/wifi-qrcode.component';
 import { FormsModule } from '@angular/forms';
-import { NgxPrintModule } from 'ngx-print';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,15 +17,12 @@ import { NgxPrintModule } from 'ngx-print';
     ProjetosComponent,
     ProjetoComponent,
     TodosProjetosComponent,
-    WifiQRCodeComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    NgxKjuaModule,
     AppRoutingModule,
     FormsModule,
-    NgxPrintModule
   ],
   providers: [],
   bootstrap: [AppComponent]

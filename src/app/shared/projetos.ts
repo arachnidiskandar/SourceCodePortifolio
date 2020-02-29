@@ -3,6 +3,7 @@ export interface Projeto {
     nome: string;
     descricao: string;
     detalhes: string[];
+    url?: string;
     online?: boolean;
     github?: string;
     rota?: string;
@@ -47,6 +48,7 @@ export const MEUS_PROJETOS: Projeto[] = [
             'Responsividade Para Mobile',
             'Sass'
         ],
+        url: 'https://wifi-share-fa39f.firebaseapp.com/',
         online: true,
         rota: 'wifi',
         linkImage: '../../assets/images/img_wifi.png'
